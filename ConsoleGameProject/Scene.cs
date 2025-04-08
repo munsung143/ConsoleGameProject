@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Scene
+public abstract class Scene
 {
+    public abstract void Render();
+    public abstract void Input();
+    public abstract void Update();
 
 }
