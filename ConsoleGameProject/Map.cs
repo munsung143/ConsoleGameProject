@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Map
+public abstract class Map
 {
-
+    public abstract void Render();
+    public abstract void Input();
+    public abstract void Update();
 }
