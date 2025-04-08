@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleGameProject
+public abstract class MapObject
 {
-    internal class MapObject
-    {
-    }
+    protected int posX;
+    protected int posY;
 }

@@ -4,9 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleGameProject
+public class FirstMapScene : MapScene
 {
-    internal class FirstMapScene
+    private Map map;
+    private bool leaveScene;
+
+    public FirstMapScene()
     {
+        map = new FirstMap();
+        leaveScene = false;
+    }
+    public override void Render()
+    {
+        while (!leaveScene)
+        {
+            map.Render();
+            map.Input();
+            map.Update();
+        }
+    }
+    public override void Input()
+    {
+        
+    }
+    public override void Update()
+    {
+
     }
 }

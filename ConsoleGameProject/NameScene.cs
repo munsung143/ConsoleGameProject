@@ -19,5 +19,6 @@ public class NameScene : CommentScene
     public override void Update()
     {
         Game.Me = new Player(input);
+        Game.CurrentScene = Game.scenes["FirstMap"];
     }
 }

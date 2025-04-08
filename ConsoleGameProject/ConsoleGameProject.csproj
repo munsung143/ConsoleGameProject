@@ -46,10 +46,13 @@
     <Compile Include="Choice.cs" />
     <Compile Include="CommentScene.cs" />
     <Compile Include="Cursor.cs" />
+    <Compile Include="FirstMap.cs" />
+    <Compile Include="FirstMapScene.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="MapObject.cs" />
     <Compile Include="MapScene.cs" />
     <Compile Include="NameScene.cs" />
     <Compile Include="Player.cs" />
@@ -58,6 +61,7 @@
     <Compile Include="Scene.cs" />
     <Compile Include="TiTleScene.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="Wall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

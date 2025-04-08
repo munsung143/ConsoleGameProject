@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleGameProject
+public class Wall : MapObject
 {
-    internal class Wall
+    public Wall(int y, int x)
     {
+        posX = x;
+        posY = y;
+    }
+    public void Interact()
+    {
+        
     }
 }
