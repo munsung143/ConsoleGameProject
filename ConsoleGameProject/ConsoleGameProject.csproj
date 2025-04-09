@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatSegment.cs" />
     <Compile Include="Choice.cs" />
     <Compile Include="FirstMapScene.cs" />
     <Compile Include="Game.cs" />

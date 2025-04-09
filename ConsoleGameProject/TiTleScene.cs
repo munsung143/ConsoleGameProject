@@ -8,6 +8,13 @@ public class TitleScene : Scene
 {
     Choice choice;
     private int input;
+
+    public TitleScene()
+    {
+        choice = new Choice();
+        choice.Add("     1. 게임 시작");
+        choice.Add("     2. 게임 종료");
+    }
     public override void Render()
     {
         Console.Clear();
@@ -17,13 +24,6 @@ public class TitleScene : Scene
         Console.WriteLine();
         Console.WriteLine("********************");
         Console.WriteLine();
-        PrintChoice();
-    }
-    public void PrintChoice()
-    {
-        choice = new Choice();
-        choice.Add("     1. 게임 시작");
-        choice.Add("     2. 게임 종료");
     }
     public override void Input()
     {
