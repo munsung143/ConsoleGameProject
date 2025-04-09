@@ -9,7 +9,6 @@ public static class Game
     private static Scene currentScene;
     public static Scene CurrentScene {  get { return currentScene; } set { currentScene = value; } }
     public static Dictionary<string, Scene> scenes;
-    public static Dictionary<string, Map> maps;
     private static Player me;
     public static Player Me { get  { return me; } set { me = value; } }
 
@@ -18,8 +17,6 @@ public static class Game
         gameEnd = false;
         gameOver = false;
         scenes = new Dictionary<string, Scene>();
-        maps = new Dictionary<string, Map>();
-        maps.Add("FirstMap", new FirstMap());
         scenes.Add("Title", new TitleScene());
         scenes.Add("Name", new NameScene());
         scenes.Add("FirstMap", new FirstMapScene());

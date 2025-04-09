@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class NameScene : CommentScene
+public class NameScene : Scene
 {
     private string input;
     public override void Render()
