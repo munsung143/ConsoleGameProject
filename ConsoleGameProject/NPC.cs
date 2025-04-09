@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Wall : MapObject
+public class NPC : MapObject
 {
-    public Wall(int y, int x)
+    public NPC(int y, int x)
     {
         posX = x;
         posY = y;
-        symbol = '9';
+        symbol = 'N';
     }
 }

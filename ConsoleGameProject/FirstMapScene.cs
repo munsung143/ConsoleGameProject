@@ -11,7 +11,7 @@ public class FirstMapScene : MapScene
 
     public FirstMapScene()
     {
-        map = new FirstMap();
+        map = Game.maps["FirstMap"];
         leaveScene = false;
     }
     public override void Render()

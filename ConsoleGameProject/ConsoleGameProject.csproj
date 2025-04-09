@@ -49,12 +49,14 @@
     <Compile Include="FirstMap.cs" />
     <Compile Include="FirstMapScene.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Interactable.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapObject.cs" />
     <Compile Include="MapScene.cs" />
     <Compile Include="NameScene.cs" />
+    <Compile Include="NPC.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerObject.cs" />
     <Compile Include="Program.cs" />
