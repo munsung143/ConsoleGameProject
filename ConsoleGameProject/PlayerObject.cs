@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Wall : MapObject
+public class PlayerObject : MapObject
 {
-    public Wall(int y, int x)
+    public PlayerObject(int y, int x)
     {
         posX = x;
         posY = y;
-        symbol = '9';
+        symbol = 'P';
     }
     public void Interact()
     {
-        
+
     }
 }
