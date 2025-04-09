@@ -15,11 +15,13 @@ public class PlayerObject : MapObject
 
     public int nextPosX => posX + directionX;
     public int nextPosY => posY + directionY;
+
     public PlayerObject(int y, int x)
     {
         posX = x;
         posY = y;
         symbol = 'P';
+        moveable = true;
     }
     public void Move()
     {
@@ -27,6 +29,14 @@ public class PlayerObject : MapObject
         {
             posX += directionX;
             posY += directionY;
+            directionX = 0;
+            directionY = 0;
         }
+        Moveable = true;
+    }
+
+    public void TryInteraction(IInteractable obj)
+    {
+        obj.Interact();
     }
 }

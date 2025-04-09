@@ -10,6 +10,6 @@ public class Wall : MapObject
     {
         posX = x;
         posY = y;
-        symbol = '9';
+        symbol = 'W';
     }
 }

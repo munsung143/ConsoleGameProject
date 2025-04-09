@@ -10,6 +10,7 @@ public class FirstMapScene : Scene
     private List<MapObject> mapObjects;
     private ConsoleKey key;
     private PlayerObject player;
+    private MapObject pickedUpObject;
 
     public FirstMapScene()
     {
@@ -84,19 +85,23 @@ public class FirstMapScene : Scene
                 player.DirectionX = 1;
                 player.DirectionY = 0;
                 break;
+            case ConsoleKey.Enter:
+                pickedUpObject = mapObjects.Find(obj => (obj.PosX == player.PosX) && (obj.PosY == player.PosY));
+                if (pickedUpObject is IInteractable)
+                {
+                    player.TryInteraction(pickedUpObject as IInteractable);
+                }
+                break;
             default:
-                player.DirectionX = 0;
-                player.DirectionY = 0;
                 break;
         }
         // 플레이어 이동 방향의 오브젝트를 불러와, 그것이 벽이라면 이동 불가로 설정.
-        player.Moveable = true;
-        MapObject obj = mapObjects.Find(x => (x.PosX == player.nextPosX) && (x.PosY == player.nextPosY));
-        if (obj is Wall)
+        pickedUpObject = mapObjects.Find(obj => (obj.PosX == player.nextPosX) && (obj.PosY == player.nextPosY));
+        if (pickedUpObject is Wall)
         {
             player.Moveable = false;
         }
         player.Move();
-
+        pickedUpObject = null;
     }
 }
