@@ -40,6 +40,7 @@ public class ChatSegment
         {
             Console.WriteLine(sentence);
         }
+        Console.WriteLine();
     }
 
     public void Input()
