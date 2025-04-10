@@ -33,6 +33,9 @@ public static class Game
         Menu.Init();
         Inventory.Init();
         Inventory.AddItem(new Potion("HP5 회복포션", 5));
+        Inventory.AddItem(new Potion("HP10 회복포션", 10));
+        Inventory.AddItem(new Potion("HP15 회복포션", 15));
+        Inventory.AddItem(new Potion("HP20 회복포션", 20));
     }
     public static void Run()
     {

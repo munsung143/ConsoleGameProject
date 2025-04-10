@@ -5,19 +5,24 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+// 인벤토리 클래스입니다.
 public static class Inventory
 {
     private static Item[] inven;
     private static Choice choice;
     private static int input;
-    private static int offset = 60;
+    private static int offsetX = 60;
+    private static int offsetY = 7;
     private static int next;
     private static bool close;
 
+
+    // 인벤토리에는 최대 10개의 아이템을 담을 수 있습니다.
+    // offsetX는 인벤토리가 좌측으로 60만큼 이동한 위치에서 열릴 것을 의미합니다.
     public static void Init()
     {
         inven = new Item[10];
-        choice = new Choice(60);
+        choice = new Choice(offsetX);
         next = 0;
     }
 
@@ -30,7 +35,8 @@ public static class Inventory
         }
     }
 
-    // 인벤토리 특정 위치 뒤의 아이템들을 한 칸 씩 앞으로 당겨와서 그 위치의 아이템을 지웁니다.
+    // 인벤토리 특정 위치 뒤의 아이템들을 한 칸 씩 앞으로 당겨와서 그 위치의 아이템이 지워집니다.
+    // 이후, 맨 뒤에 있던 아이템을 지웁니다.
     public static void DelItemAt(int index)
     {
         for (int i = index + 1; i < next; i++)
@@ -41,6 +47,7 @@ public static class Inventory
         next--;
     }
 
+    // 인벤토리 내의 선택 결과에 따른 다음 행동을 결정합니다.
     public static void Next()
     {
         if (input == 0)
@@ -68,8 +75,8 @@ public static class Inventory
     {
         for (int i = 0; i < inven.Length + 1; i++)
         {
-            Console.SetCursorPosition(offset, 7 + i);
-            Console.WriteLine("                   ");
+            Console.SetCursorPosition(offsetX, offsetY + i);
+            Console.WriteLine("                         ");
         }
 
     }
@@ -100,7 +107,7 @@ public static class Inventory
         while (!close)
         {
             Clear();
-            Console.SetCursorPosition(offset, 7);
+            Console.SetCursorPosition(offsetX, 7);
             Console.WriteLine("[인벤토리]");
             input = choice.Start();
             Next();

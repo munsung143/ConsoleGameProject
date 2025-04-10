@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+// 이름을 입력받아 플레이어 인스턴스를 생성하는 씬입니다.
 public class NameScene : Scene
 {
     private string input;

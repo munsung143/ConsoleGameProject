@@ -13,6 +13,12 @@ public abstract class MapScene : Scene
     protected MapObject pickedUpObject;
     public abstract void PortalInit();
 
+    public MapScene()
+    {
+        player = Game.MyObject;
+        mapObjects = new List<MapObject>();
+    }
+
     // string[] map을 그대로 출력하는 것이 아닌, string[] map 을 바탕으로 리스트에 추가된
     // 맵 오브젝트 인스턴스들의 멤버인 좌표, 심볼을 참조하여 출력합니다.
     public override void Render()
@@ -27,6 +33,8 @@ public abstract class MapScene : Scene
         Console.SetCursorPosition(player.PosX, player.PosY);
         Console.Write(player.Symbol);
         Console.SetCursorPosition(0, map.Length);
+        Console.WriteLine("이동 : 방향키 상호작용/선택 : enter 메뉴 : esc");
+        Console.WriteLine("엔피시 : N 포탈 : X 동전 : .");
     }
 
     public override void Input()

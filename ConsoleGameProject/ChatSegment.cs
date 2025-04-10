@@ -34,7 +34,7 @@ public class ChatSegment
     // 대화가 출력되기 전 해당 위치를 10칸 비웁니다.
     public void Clear()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 15; i++)
         {
             Console.SetCursorPosition(0, 10+i);
             Console.Write("                                                                  ");
@@ -44,7 +44,7 @@ public class ChatSegment
     // 대화를 출력합니다.
     public void Render()
     {
-        Console.SetCursorPosition(0, 10);
+        Console.SetCursorPosition(0, 15);
         foreach (var sentence in sentences)
         {
             Console.WriteLine(sentence);

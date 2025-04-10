@@ -9,8 +9,6 @@ public class SecondMapScene : MapScene
 
     public SecondMapScene()
     {
-        player = Game.MyObject;
-        mapObjects = new List<MapObject>();
         map = new string[]
         {
             "wwwwwwwwwwwwwwwwwwwww",
@@ -54,6 +52,12 @@ public class SecondMapScene : MapScene
                 }
             }
         }
+    }
+
+    public override void Render()
+    {
+        base.Render();
+        Console.WriteLine("[두 번째 맵]");
     }
 
 }

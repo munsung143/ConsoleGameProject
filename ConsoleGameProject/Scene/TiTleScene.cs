@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
+// 게임 시작 시 타이틀 씬입니다.
 public class TitleScene : Scene
 {
     Choice choice;
