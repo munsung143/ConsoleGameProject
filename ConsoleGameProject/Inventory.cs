@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Inventory
+public static class Inventory
 {
-
+    private static List<Item> inven;
 }

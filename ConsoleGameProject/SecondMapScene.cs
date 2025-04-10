@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class FirstMapScene : Scene
+public class SecondMapScene : Scene
 {
     private string[] map;
     private List<MapObject> mapObjects;
@@ -12,19 +12,20 @@ public class FirstMapScene : Scene
     private PlayerObject player;
     private MapObject pickedUpObject;
 
-    public FirstMapScene()
+    public SecondMapScene()
     {
         player = Game.MyObject;
         mapObjects = new List<MapObject>();
         map = new string[]
         {
-            "wwwwwwwwwwwwwww",
-            "w             w",
-            "w             w",
-            "w  p         2w",
-            "w             w",
-            "w         n   w",
-            "wwwwwwwwwwwwwww",
+            "wwwwwwwwwwwwwwwwwwwww",
+            "w           w       w",
+            "w           w       w",
+            "w           w       w",
+            "w                   w",
+            "w 1         w       w",
+            "w           w       w",
+            "wwwwwwwwwwwwwwwwwwwww",
         };
         for (int i = 0; i < map.Length; i++)
         {
@@ -38,22 +39,19 @@ public class FirstMapScene : Scene
                 {
                     mapObjects.Add(new NPC(i, j));
                 }
-                else if (map[i][j] == 'p')
-                {
-                    player.SetPos(i, j);
-                }
             }
         }
     }
+
     public void PortalInit()
     {
         for (int i = 0; i < map.Length; i++)
         {
             for (int j = 0; j < map[i].Length; j++)
             {
-                if (map[i][j] == '2')
+                if (map[i][j] == '1')
                 {
-                    mapObjects.Add(new Portal(i, j, Game.scenes["SecondMap"], 5, 2));
+                    mapObjects.Add(new Portal(i, j, Game.scenes["FirstMap"], 3, 13));
                 }
             }
         }
@@ -71,7 +69,7 @@ public class FirstMapScene : Scene
         Console.SetCursorPosition(player.PosX, player.PosY);
         Console.Write(player.Symbol);
         Console.SetCursorPosition(0, map.Length);
-        Console.WriteLine("첫번째 맵");
+        Console.WriteLine("두번째 맵");
 
 
 

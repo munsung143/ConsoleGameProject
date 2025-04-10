@@ -35,6 +35,12 @@ public class PlayerObject : MapObject
         Moveable = true;
     }
 
+    public void SetPos(int y, int x)
+    {
+        posX = x;
+        posY = y;
+    }
+
     public void TryInteraction(IInteractable obj)
     {
         obj.Interact();
