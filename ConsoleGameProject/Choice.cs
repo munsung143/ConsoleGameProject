@@ -20,6 +20,7 @@ public class Choice
     {
         offset = 0;
     }
+    // 해당 거리만큼 좌측으로 이동된 위치에서 선택지가 출력되도록 합니다.
     public Choice(int off)
     {
         offset = off;

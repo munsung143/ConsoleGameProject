@@ -11,7 +11,7 @@ public class Player
     public int Health { get { return health; } set { health = value; } }
     private int balance;
     public int Balance { get { return balance; } set { balance = value; } }
-
+    // 플레이어의 정보가 출력될 좌측 이동 거리입니다.
     private int offset = 60;
 
     public Player(string name)

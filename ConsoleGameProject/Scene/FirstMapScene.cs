@@ -22,6 +22,7 @@ public class FirstMapScene : MapScene
             "w         n   w",
             "wwwwwwwwwwwwwww",
         };
+        
         for (int i = 0; i < map.Length; i++)
         {
             for (int j = 0; j < map[i].Length; j++)
@@ -34,7 +35,6 @@ public class FirstMapScene : MapScene
                 {
                     mapObjects.Add(new NPC(i, j));
                 }
-
                 else if (map[i][j] == 'p')
                 {
                     player.SetPos(i, j);

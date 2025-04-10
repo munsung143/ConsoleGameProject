@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// 두번째 맵의 클래스입니다. 첫번째 맵과 비슷합니다.
 public class SecondMapScene : MapScene
 {
 

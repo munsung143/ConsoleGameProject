@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// 맵 씬의 추상 클래스입니다.
 public abstract class MapScene : Scene
 {
     protected string[] map;
@@ -25,16 +26,19 @@ public abstract class MapScene : Scene
     {
         Console.Clear();
         Game.Me.PrintInfo();
+        // 맵을 출력합니다
         foreach (MapObject obj in mapObjects)
         {
             Console.SetCursorPosition(obj.PosX, obj.PosY);
             Console.Write(obj.Symbol);
         }
+        // 플레이어를 출력합니다
         Console.SetCursorPosition(player.PosX, player.PosY);
         Console.Write(player.Symbol);
+        // 정보를 출력합니다.
         Console.SetCursorPosition(0, map.Length);
-        Console.WriteLine("이동 : 방향키 상호작용/선택 : enter 메뉴 : esc");
-        Console.WriteLine("엔피시 : N 포탈 : X 동전 : .");
+        Console.WriteLine("이동 : 방향키 | 상호작용/선택 : enter | 메뉴 : esc");
+        Console.WriteLine("엔피시 : N | 포탈 : X | 동전 : $");
     }
 
     public override void Input()
@@ -89,6 +93,7 @@ public abstract class MapScene : Scene
         if (pickedUpObject is IAutoInteractable)
         {
             player.TryInteraction(pickedUpObject as IAutoInteractable);
+            // 얻을 수 있는 오브젝트라면, 상호작용 후 해당 아이템을 지웁니다.
             if (pickedUpObject.Gettable)
             {
                 mapObjects.Remove(pickedUpObject);

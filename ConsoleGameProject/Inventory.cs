@@ -50,12 +50,14 @@ public static class Inventory
     // 인벤토리 내의 선택 결과에 따른 다음 행동을 결정합니다.
     public static void Next()
     {
+        // esc를 눌렀을 경우 인벤토리를 나갑니다.
         if (input == 0)
         {
             close = true;
             Clear();
             return;
         }
+        // 아무 아이템이 없을 경우 아무 행동을 안합니다.
         if (inven[input - 1] == null)
         {
             return;
@@ -66,11 +68,12 @@ public static class Inventory
             DelItemAt(input - 1);
             ClearChoice();
         }
+        // 플레이어 정보를 재출력하여 반영된 효과를 확인합니다.
         Game.Me.PrintInfo();
 
     }
 
-    // 인벤토리가 출력될 위치를 깔끔하게 비웁니다.
+    // 인벤토리가 출력될 위치를 비웁니다.
     public static void Clear()
     {
         for (int i = 0; i < inven.Length + 1; i++)

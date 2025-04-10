@@ -10,6 +10,8 @@ public class Portal : MapObject, IInteractable
     private Scene nextScene;
     private int nextPosX;
     private int nextPosY;
+
+    // 포탈은 해당 맵에서의 자신의 위치, 이동할 씬, 다음 씬에서의 플레이어의 위치 정보를 가집니다.
     public Portal(int y, int x, Scene next, int ny, int nx)
     {
         posX = x;
