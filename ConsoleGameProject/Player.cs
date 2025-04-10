@@ -25,6 +25,7 @@ public class Player
     // 플레이어의 정보를 화면 우측에 출력합니다.
     public void PrintInfo()
     {
+        Console.SetCursorPosition(0, 0);
         Console.WriteLine();
         Console.SetCursorPosition(offset, Console.CursorTop);
         Console.WriteLine($"이름 : {name}");
@@ -34,5 +35,10 @@ public class Player
         Console.WriteLine($"체력 : {health}");
         Console.SetCursorPosition(offset, Console.CursorTop);
         Console.WriteLine($"돈 : {balance}원");
+    }
+
+    public void Heal(int amount)
+    {
+        Health += amount;
     }
 }

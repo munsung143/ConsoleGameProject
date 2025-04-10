@@ -32,9 +32,7 @@ public static class Game
         currentScene = scenes["Title"];
         Menu.Init();
         Inventory.Init();
-        Inventory.AddItem(new Item("aa"));
-        Inventory.AddItem(new Item("bb"));
-        Inventory.AddItem(new Item("cc"));
+        Inventory.AddItem(new Potion("HP5 회복포션", 5));
     }
     public static void Run()
     {

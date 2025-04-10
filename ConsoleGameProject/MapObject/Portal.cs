@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// 맵 상에 점( . )으로 표시되는 포탈 클래스입니다.
+// 맵 상에 X 으로 표시되는 포탈 클래스입니다.
 public class Portal : MapObject, IInteractable
 {
     private Scene nextScene;
@@ -16,7 +16,7 @@ public class Portal : MapObject, IInteractable
         posY = y;
         nextPosX = nx;
         nextPosY = ny;
-        symbol = '.';
+        symbol = 'X';
         nextScene = next;
     }
 

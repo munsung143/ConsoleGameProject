@@ -45,11 +45,12 @@
   <ItemGroup>
     <Compile Include="ChatSegment.cs" />
     <Compile Include="Choice.cs" />
+    <Compile Include="Item\Potion.cs" />
     <Compile Include="Scene\FirstMapScene.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="MapObject\Interactable.cs" />
     <Compile Include="Inventory.cs" />
-    <Compile Include="Item.cs" />
+    <Compile Include="Item\Item.cs" />
     <Compile Include="MapObject\MapObject.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Scene\MapScene.cs" />

@@ -20,10 +20,17 @@ public static class Inventory
         choice = new Choice(60);
         next = 0;
     }
+
+    // 인벤토리에 아이템을 추가합니다.
     public static void AddItem(Item item)
     {
-        inven[next++] = item;
+        if (next < inven.Length - 1)
+        {
+            inven[next++] = item;
+        }
     }
+
+    // 인벤토리 특정 위치 뒤의 아이템들을 한 칸 씩 앞으로 당겨와서 그 위치의 아이템을 지웁니다.
     public static void DelItemAt(int index)
     {
         for (int i = index + 1; i < next; i++)
@@ -46,18 +53,17 @@ public static class Inventory
         {
             return;
         }
-        switch (inven[input - 1].Name)
+        inven[input - 1].Effect();
+        if (inven[input - 1].Counsumable == true)
         {
-            case "bb":
-                DelItemAt(input - 1);
-                ClearChoice();
-                break;
-            default:
-                break;
+            DelItemAt(input - 1);
+            ClearChoice();
         }
+        Game.Me.PrintInfo();
 
     }
 
+    // 인벤토리가 출력될 위치를 깔끔하게 비웁니다.
     public static void Clear()
     {
         for (int i = 0; i < inven.Length + 1; i++)
@@ -68,6 +74,7 @@ public static class Inventory
 
     }
     
+    // 인벤토리 선택지를 갱신합니다.
     public static void ClearChoice()
     {
         choice.Clear();
@@ -85,6 +92,7 @@ public static class Inventory
         }
     }
 
+    // 인벤토리를 엽니다.
     public static void Open()
     {
         close = false;
