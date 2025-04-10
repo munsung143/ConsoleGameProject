@@ -1,6 +1,6 @@
 ﻿using System;
 
-
+// 플레이어의 정보 및 정보의 출력을 관리하는 클래스입니다.
 public class Player
 {
     private string name;

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+// 개발 시에 유용하게 쓰일 수 있는 기능을 모아둘 클래스입니다.
 public static class Util
 {
     public static void PrintEach(string str, ConsoleColor color, int letter, int sentence)

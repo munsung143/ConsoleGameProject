@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// 맵 상에 N으로 표시되는 NPC 오브젝트 클래스입니다.
 public class NPC : MapObject, IInteractable
 {
     private Stack<ChatSegment> chat;

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// 맵 상에 P로 표시되는 플레이어 오브젝트 클래스입니다.
+// 플레이어 클래스와 따로 관리됩니다.
 public class PlayerObject : MapObject
 {
     private int directionX;

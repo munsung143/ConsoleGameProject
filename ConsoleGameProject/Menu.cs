@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// 씬에서 esc를 누르게 되면 나오는 메뉴 클래스입니다.
 public static class Menu
 {
     private static Choice choice;

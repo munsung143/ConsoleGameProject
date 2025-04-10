@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class SecondMapScene : Scene
+public class SecondMapScene : MapScene
 {
     private string[] map;
     private List<MapObject> mapObjects;
@@ -43,7 +43,7 @@ public class SecondMapScene : Scene
         }
     }
 
-    public void PortalInit()
+    public override void PortalInit()
     {
         for (int i = 0; i < map.Length; i++)
         {

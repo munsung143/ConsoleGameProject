@@ -45,25 +45,26 @@
   <ItemGroup>
     <Compile Include="ChatSegment.cs" />
     <Compile Include="Choice.cs" />
-    <Compile Include="FirstMapScene.cs" />
+    <Compile Include="Scene\FirstMapScene.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="Interactable.cs" />
+    <Compile Include="MapObject\Interactable.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="MapObject.cs" />
+    <Compile Include="MapObject\MapObject.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="NameScene.cs" />
-    <Compile Include="NPC.cs" />
+    <Compile Include="Scene\MapScene.cs" />
+    <Compile Include="Scene\NameScene.cs" />
+    <Compile Include="MapObject\NPC.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="PlayerObject.cs" />
-    <Compile Include="Portal.cs" />
+    <Compile Include="MapObject\PlayerObject.cs" />
+    <Compile Include="MapObject\Portal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scene.cs" />
-    <Compile Include="SecondMapScene.cs" />
-    <Compile Include="TiTleScene.cs" />
+    <Compile Include="Scene\Scene.cs" />
+    <Compile Include="Scene\SecondMapScene.cs" />
+    <Compile Include="Scene\TiTleScene.cs" />
     <Compile Include="Util.cs" />
-    <Compile Include="Wall.cs" />
+    <Compile Include="MapObject\Wall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

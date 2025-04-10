@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+// 게임의 초기화와 게임 실행을 관리하는 클래스입니다.
 public static class Game
 {
     private static bool gameEnd;
@@ -26,8 +27,8 @@ public static class Game
         scenes.Add("Name", new NameScene());
         scenes.Add("FirstMap", new FirstMapScene());
         scenes.Add("SecondMap", new SecondMapScene());
-        (scenes["FirstMap"] as FirstMapScene).PortalInit();
-        (scenes["SecondMap"] as SecondMapScene).PortalInit();
+        (scenes["FirstMap"] as MapScene).PortalInit();
+        (scenes["SecondMap"] as MapScene).PortalInit();
         currentScene = scenes["Title"];
         Menu.Init();
     }

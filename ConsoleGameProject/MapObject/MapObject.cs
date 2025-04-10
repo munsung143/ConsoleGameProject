@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//맵에 배치될 오브젝트가 기본적으로 가지는 변수
 public abstract class MapObject
 {
     protected int posX;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// 맵 상에 점( . )으로 표시되는 포탈 클래스입니다.
 public class Portal : MapObject, IInteractable
 {
     private Scene nextScene;
@@ -18,6 +19,8 @@ public class Portal : MapObject, IInteractable
         symbol = '.';
         nextScene = next;
     }
+
+    // 상호작용 시 씬을 다음 씬으로 넘기고, 플레이어의 위치 또한 바꿉니다.
     public void Interact()
     {
         Game.CurrentScene = nextScene;

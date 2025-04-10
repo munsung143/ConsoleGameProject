@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// NPC와 대화 시 맵 화면 아래에 출력되는 대화의 한 장면에 대한 클래스입니다.
+// 만들어진 인스턴스들은 NPC 클래스의 스택을 통해 관리됩니다.
+// Scene과 비슷합니다.
 public class ChatSegment
 {
     private List<string> sentences;
