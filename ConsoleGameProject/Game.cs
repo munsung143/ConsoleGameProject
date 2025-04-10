@@ -31,6 +31,10 @@ public static class Game
         (scenes["SecondMap"] as MapScene).PortalInit();
         currentScene = scenes["Title"];
         Menu.Init();
+        Inventory.Init();
+        Inventory.AddItem(new Item("aa"));
+        Inventory.AddItem(new Item("bb"));
+        Inventory.AddItem(new Item("cc"));
     }
     public static void Run()
     {

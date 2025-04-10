@@ -22,6 +22,7 @@ public class Player
         this.balance = 1000;
     }
 
+    // 플레이어의 정보를 화면 우측에 출력합니다.
     public void PrintInfo()
     {
         Console.WriteLine();

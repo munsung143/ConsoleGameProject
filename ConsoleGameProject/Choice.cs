@@ -14,9 +14,23 @@ public class Choice
     public int ChoicesCount { get { return Choices.Count; } }
     private int cursorPos = 0;
     private int choiceVal = 0;
+    private int offset;
+
+    public Choice()
+    {
+        offset = 0;
+    }
+    public Choice(int off)
+    {
+        offset = off;
+    }
     public void Add(string choice)
     {
         Choices.Add(choice);
+    }
+    public void Clear()
+    {
+        Choices.Clear();
     }
 
     // 선택지 출력 후, 커서를 초기 위치에 출력합니다.
@@ -24,19 +38,21 @@ public class Choice
     {
         foreach (string choice in Choices)
         {
+            Console.SetCursorPosition(offset,Console.CursorTop);
             Console.WriteLine(choice);
         }
         cursorPos = Console.CursorTop - Choices.Count();
         choiceVal = 1;
-        Console.SetCursorPosition(0, cursorPos);
+        Console.SetCursorPosition(offset, cursorPos);
         Cursor();
+        
     }
 
     // 커서를 출력합니다.
     public void Cursor()
     {
         Console.Write('>');
-        Console.SetCursorPosition(0, cursorPos);
+        Console.SetCursorPosition(offset, cursorPos);
     }
 
     // 커서가 출력될 위치를 위로 한 칸 올리고, 커서를 출력합니다.
@@ -47,7 +63,7 @@ public class Choice
             Console.Write(" ");
             cursorPos--;
             choiceVal--;
-            Console.SetCursorPosition(0, cursorPos);
+            Console.SetCursorPosition(offset, cursorPos);
             Cursor();
         }
     }
@@ -60,7 +76,7 @@ public class Choice
             Console.Write(" ");
             cursorPos++;
             choiceVal++;
-            Console.SetCursorPosition(0, cursorPos);
+            Console.SetCursorPosition(offset, cursorPos);
             Cursor();
         }
     }
@@ -84,6 +100,8 @@ public class Choice
                 case ConsoleKey.Enter:
                     Console.SetCursorPosition(0, cursorPos + (Choices.Count - choiceVal) + 2);
                     return choiceVal;
+                case ConsoleKey.Escape:
+                    return 0;
             }
         }
     }

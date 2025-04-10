@@ -18,15 +18,20 @@ public class ChatSegment
         sentences = new List<string>();
         choice = new Choice();
     }
+
+    // 대화 아래에 뜰 선택지에 항목 추가
     public void AddChoice(string text)
     {
         choice.Add(text);
     }
+
+    // 대화 내용 추가
     public void AddSentence(string text)
     {
         sentences.Add(text);
     }
 
+    // 대화가 출력되기 전 해당 위치를 10칸 비웁니다.
     public void Clear()
     {
         for (int i = 0; i < 10; i++)
@@ -36,6 +41,7 @@ public class ChatSegment
         }
     }
 
+    // 대화를 출력합니다.
     public void Render()
     {
         Console.SetCursorPosition(0, 10);
@@ -46,11 +52,13 @@ public class ChatSegment
         Console.WriteLine();
     }
 
+    // 대화 선택지를 출력하고, 선택값을 받습니다.
     public void Input()
     {
         input = choice.Start();
     }
 
+    // 선택값을 반환합니다.
     public int ReturnInput()
     {
         return input;
