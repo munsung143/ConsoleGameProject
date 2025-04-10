@@ -51,7 +51,7 @@ public class SecondMapScene : Scene
             {
                 if (map[i][j] == '1')
                 {
-                    mapObjects.Add(new Portal(i, j, Game.scenes["FirstMap"], 3, 13));
+                    mapObjects.Add(new Portal(i, j, Game.scenes["FirstMap"], 3, 12));
                 }
             }
         }

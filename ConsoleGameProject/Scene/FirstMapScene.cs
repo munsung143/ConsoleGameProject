@@ -21,7 +21,7 @@ public class FirstMapScene : Scene
             "wwwwwwwwwwwwwww",
             "w             w",
             "w             w",
-            "w  p         2w",
+            "w  p        2 w",
             "w             w",
             "w         n   w",
             "wwwwwwwwwwwwwww",
