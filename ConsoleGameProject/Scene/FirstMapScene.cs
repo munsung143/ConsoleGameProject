@@ -16,6 +16,8 @@ public class FirstMapScene : MapScene
     {
         player = Game.MyObject;
         mapObjects = new List<MapObject>();
+        // 아래의 맵은 인스턴스 생성을 위한 가이드로서 사용됩니다.
+        // 맵에 표시된 문자의 종류에 따라 생성되는 인스턴스의 종류가 달라집니다.
         map = new string[]
         {
             "wwwwwwwwwwwwwww",
@@ -45,6 +47,9 @@ public class FirstMapScene : MapScene
             }
         }
     }
+
+    // 포탈은 다음 씬에 대한 참조를 가져야 하기 때문에
+    // 위의 생성자와 분리하여 따로 초기화했습니다.
     public override void PortalInit()
     {
         for (int i = 0; i < map.Length; i++)
@@ -59,6 +64,8 @@ public class FirstMapScene : MapScene
         }
     }
 
+    // 위의 맵을 그대로 출력하는 것이 아닌, 위의 맵을 바탕으로 리스트에 추가된
+    // 맵 오브젝트 인스턴스들의 좌표, 심볼을 참조하여 출력합니다.
     public override void Render()
     {
         Console.Clear();
@@ -102,6 +109,7 @@ public class FirstMapScene : MapScene
                 player.DirectionY = 0;
                 break;
             case ConsoleKey.Enter:
+                // 플레이어와 겹친 오브젝트를 불러와, 상호작용 시도.
                 pickedUpObject = mapObjects.Find(obj => (obj.PosX == player.PosX) && (obj.PosY == player.PosY));
                 if (pickedUpObject is IInteractable)
                 {
@@ -109,6 +117,7 @@ public class FirstMapScene : MapScene
                 }
                 break;
             case ConsoleKey.Escape:
+                // 메뉴 오픈
                 Menu.Open();
                 break;
             default:

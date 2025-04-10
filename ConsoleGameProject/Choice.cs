@@ -18,6 +18,8 @@ public class Choice
     {
         Choices.Add(choice);
     }
+
+    // 선택지 출력 후, 커서를 초기 위치에 출력합니다.
     public void Print()
     {
         foreach (string choice in Choices)
@@ -29,11 +31,15 @@ public class Choice
         Console.SetCursorPosition(0, cursorPos);
         Cursor();
     }
+
+    // 커서를 출력합니다.
     public void Cursor()
     {
         Console.Write('>');
         Console.SetCursorPosition(0, cursorPos);
     }
+
+    // 커서가 출력될 위치를 위로 한 칸 올리고, 커서를 출력합니다.
     public void CursorUp()
     {
         if (choiceVal > 1)
@@ -45,6 +51,8 @@ public class Choice
             Cursor();
         }
     }
+
+    // 커서가 출력될 위치를 한 칸 내리고, 커서를 출력합니다.
     public void CursorDown()
     {
         if (choiceVal < Choices.Count())
@@ -56,6 +64,9 @@ public class Choice
             Cursor();
         }
     }
+
+    // 선택지가 출력됩니다. 키 입력을 받아 커서를 위, 아래로 움직일 수 있으며, 선택 후 엔터 시 
+    // 해당 선택지 위치에 대한 정수를 반환합니다.
     public int Start()
     {
         Print();

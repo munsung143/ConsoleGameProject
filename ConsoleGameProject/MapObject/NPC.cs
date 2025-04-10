@@ -28,6 +28,9 @@ public class NPC : MapObject, IInteractable
         seg2.AddChoice("     2. 마침");
 
     }
+
+    // NPC와 상호작용(대화) 시 선택지에 따라 반환되는 값을 바탕으로
+    // 스택을 조정하여 다음 대화로 이동하거나, 대화를 종료합니다.
     public void Interact()
     {
         chat.Push(seg1);
