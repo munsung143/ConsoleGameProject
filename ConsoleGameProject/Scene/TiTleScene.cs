@@ -43,9 +43,6 @@ public class TitleScene : Scene
                 break;
         }
     }
-    public  void Waiting()
-    {
-    }
     public override void Update()
     {
         switch (input)

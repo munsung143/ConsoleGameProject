@@ -13,4 +13,7 @@ public abstract class MapObject
     public int PosY { get { return posY; } set { posY = value; } }
     protected char symbol;
     public char Symbol { get { return symbol; } }
+    protected bool gettable = false;
+    public bool Gettable { get { return gettable; }}
+
 }

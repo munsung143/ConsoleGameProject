@@ -6,11 +6,6 @@ using System.Threading.Tasks;
 
 public class FirstMapScene : MapScene
 {
-    private string[] map;
-    private List<MapObject> mapObjects;
-    private ConsoleKey key;
-    private PlayerObject player;
-    private MapObject pickedUpObject;
 
     public FirstMapScene()
     {
@@ -40,6 +35,7 @@ public class FirstMapScene : MapScene
                 {
                     mapObjects.Add(new NPC(i, j));
                 }
+
                 else if (map[i][j] == 'p')
                 {
                     player.SetPos(i, j);
@@ -130,6 +126,16 @@ public class FirstMapScene : MapScene
             player.Moveable = false;
         }
         player.Move();
+        // 플레이어와 겹친 오브젝트를 불러와, 자동 상호작용 시도.
+        pickedUpObject = mapObjects.Find(obj => (obj.PosX == player.PosX) && (obj.PosY == player.PosY));
+        if (pickedUpObject is IAutoInteractable)
+        {
+            player.TryInteraction(pickedUpObject as IAutoInteractable);
+            if (pickedUpObject.Gettable)
+            {
+                mapObjects.Remove(pickedUpObject);
+            }
+        }
         pickedUpObject = null;
     }
 }

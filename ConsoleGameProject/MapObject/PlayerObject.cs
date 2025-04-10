@@ -47,4 +47,8 @@ public class PlayerObject : MapObject
     {
         obj.Interact();
     }
+    public void TryInteraction(IAutoInteractable obj)
+    {
+        obj.Interact();
+    }
 }

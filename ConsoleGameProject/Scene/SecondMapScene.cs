@@ -6,11 +6,6 @@ using System.Threading.Tasks;
 
 public class SecondMapScene : MapScene
 {
-    private string[] map;
-    private List<MapObject> mapObjects;
-    private ConsoleKey key;
-    private PlayerObject player;
-    private MapObject pickedUpObject;
 
     public SecondMapScene()
     {
@@ -20,9 +15,9 @@ public class SecondMapScene : MapScene
         {
             "wwwwwwwwwwwwwwwwwwwww",
             "w           w       w",
-            "w           w       w",
-            "w           w       w",
-            "w                   w",
+            "w     c     w       w",
+            "w        c  w       w",
+            "w     c             w",
             "w 1         w       w",
             "w           w       w",
             "wwwwwwwwwwwwwwwwwwwww",
@@ -38,6 +33,10 @@ public class SecondMapScene : MapScene
                 else if (map[i][j] == 'n')
                 {
                     mapObjects.Add(new NPC(i, j));
+                }
+                else if (map[i][j] == 'c')
+                {
+                    mapObjects.Add(new Coin(i, j));
                 }
             }
         }
@@ -119,6 +118,16 @@ public class SecondMapScene : MapScene
             player.Moveable = false;
         }
         player.Move();
+        // 플레이어와 겹친 오브젝트를 불러와, 자동 상호작용 시도.
+        pickedUpObject = mapObjects.Find(obj => (obj.PosX == player.PosX) && (obj.PosY == player.PosY));
+        if (pickedUpObject is IAutoInteractable)
+        {
+            player.TryInteraction(pickedUpObject as IAutoInteractable);
+            if (pickedUpObject.Gettable)
+            {
+                mapObjects.Remove(pickedUpObject);
+            }
+        }
         pickedUpObject = null;
     }
 }

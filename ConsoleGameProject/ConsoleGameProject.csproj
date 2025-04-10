@@ -46,6 +46,8 @@
     <Compile Include="ChatSegment.cs" />
     <Compile Include="Choice.cs" />
     <Compile Include="Item\Potion.cs" />
+    <Compile Include="MapObject\AutoInteractable.cs" />
+    <Compile Include="MapObject\Coin.cs" />
     <Compile Include="Scene\FirstMapScene.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="MapObject\Interactable.cs" />
